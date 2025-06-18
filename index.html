@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>e-Portofolio - Deret Aritmetika</title>
+    <link rel="icon" href="image/logoportofolio.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #fce4ec, #f8bbd0, #f48fb1);
+      color: #4a148c;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .container {
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .kotak-portofolio {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 1.5rem;
+      padding: 2rem 1rem;
+      margin: 2rem auto;
+      max-width: 600px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 25px rgba(255, 192, 203, 0.4);
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #ff99cc, #ba68c8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow-text 3s ease-in-out infinite;
+      text-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      margin-top: -1rem;
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: #880e4f;
+    }
+
+    .card-biodata {
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 400px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.5);
+    }
+
+    .foto-profil {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid transparent;
+      background: linear-gradient(135deg, #ff99cc, #ff66b2);
+      padding: 4px;
+      margin: 1rem auto;
+      display: block;
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.7);
+      animation: spin-slow 15s linear infinite, glow-pink 2s ease-in-out infinite;
+    }
+
+    .btn-masuk {
+      padding: 1rem 2.5rem;
+      background: linear-gradient(135deg, #ff99cc, #ff66b2);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      box-shadow: 0 0 20px #ff99cc, 0 0 40px #ff66b2;
+      transition: 0.3s ease-in-out;
+      animation: pulse 2s infinite, float-button 3s ease-in-out infinite;
+      display: inline-block;
+      margin-top: 2rem;
+    }
+
+    .btn-masuk:hover {
+      background: linear-gradient(135deg, #ff66b2, #ff99cc);
+      box-shadow: 0 0 25px #ff66b2, 0 0 50px #ff99cc;
+      transform: scale(1.05);
+    }
+
+    .math-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .orb {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: rgba(255, 105, 180, 0.2);
+      border-radius: 50%;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .symbols {
+      position: absolute;
+      font-size: 3rem;
+      color: rgba(255, 105, 180, 0.1);
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .emoji-ribbon {
+      position: absolute;
+      font-size: 2rem;
+      animation: float 5s infinite ease-in-out;
+    }
+
+    .emoji-ribbon:nth-child(1) { top: 10%; left: 5%; }
+    .emoji-ribbon:nth-child(2) { top: 20%; right: 10%; }
+    .emoji-ribbon:nth-child(3) { bottom: 15%; left: 8%; }
+    .emoji-ribbon:nth-child(4) { bottom: 10%; right: 12%; }
+    .emoji-ribbon:nth-child(5) { top: 50%; left: 45%; }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 15px #ff99cc, 0 0 30px #ff66b2; }
+      50% { box-shadow: 0 0 25px #ff66b2, 0 0 50px #ff99cc; }
+      100% { box-shadow: 0 0 15px #ff99cc, 0 0 30px #ff66b2; }
+    }
+
+    @keyframes float-button {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes spin-slow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes glow-pink {
+      0%, 100% { box-shadow: 0 0 15px #ff99cc; }
+      50% { box-shadow: 0 0 30px #ff66b2; }
+    }
+
+    @keyframes glow-text {
+      0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(186, 104, 200, 0.8);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="math-bg">
+    <div class="orb"></div>
+        <div class="symbols" style="top: 30%; left: 30%;">∑ 🎀 √</div>
+    <div class="symbols" style="top: 60%; right: 15%;">π ∞ 🎀</div>
+    <div class="symbols" style="top: 30%; left: 20%;">∑ 🎀 √</div>
+    <div class="symbols" style="top: 60%; right: 25%;">π ∞ 🎀</div>
+  
+  </div>
+
+  <main class="container">
+
+    <div class="kotak-portofolio">
+      <h1>🎀 E-Portofolio 🎀</h1>
+      <p class="subtitle">Deret Aritmetika – SMK Kelas X</p>
+    </div>
+
+    <div class="card-biodata">
+      <img src="image/putxio0o.jpeg" alt="Foto Putri Rahma Dini" class="foto-profil" />
+      <h2>Disusun oleh:</h2>
+      <p><strong>Putri Rahma Dini</strong> – 23510027</p>
+      <p>Pendidikan Matematika – IKIP Siliwangi</p>
+    </div>
+
+    <a href="masuk.html" class="btn-masuk">✨ MASUK ✨</a>
+
+  </main>
+</body>
+</html>

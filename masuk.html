@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deret Aritmetika</title>
+  <link rel="icon" href="image/logoportofolio.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #fce4ec, #f8bbd0, #f48fb1);
+      color: #4a148c;
+      padding: 2rem;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    @keyframes floatButton {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .back-button {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      background: rgba(255, 255, 255, 0.5);
+      color: #6a1b9a;
+      padding: 0.6rem 1.2rem;
+      border-radius: 2rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(186, 104, 200, 0.3);
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      animation: floatButton 2s ease-in-out infinite;
+    }
+
+    .back-button:hover {
+      background: rgba(255, 255, 255, 0.8);
+      color: #4a148c;
+    }
+
+    .wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 1rem;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+    }
+
+    .judul {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      background: linear-gradient(to right, #ff99cc, #ba68c8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow-text 3s ease-in-out infinite;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      width: 90%;
+      max-width: 600px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.5);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      background: rgba(255, 255, 255, 0.5);
+      transform: scale(1.03);
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .content {
+      display: none;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      background: rgba(255, 255, 255, 0.4);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      text-align: left;
+    }
+
+    .active .content {
+      display: block;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes glow-text {
+      0%, 100% { text-shadow: 0 0 10px rgba(255, 105, 180, 0.4); }
+      50% { text-shadow: 0 0 20px rgba(186, 104, 200, 0.8); }
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tombol Kembali -->
+  <a href="index.html" class="back-button">Kembali</a>
+
+  <div class="wrapper">
+    <h1 class="judul">✨ Deret Aritmetika ✨</h1>
+
+    <div class="container">
+      <div class="card" onclick="toggle(this)">
+        <div class="card-title">📄 Modul Ajar</div>
+        <div class="content">
+          <p><strong>Judul:</strong> Modul Ajar Deret Aritmetika SMK</p>
+          <p><a href="file/modulajarr.pdf" target="_blank">📎 Lihat File</a></p>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggle(this)">
+        <div class="card-title">📚 LKPD</div>
+        <div class="content">
+          <p><strong>Judul:</strong> LKPD Deret Aritmetika</p>
+          <p><a href="file/LKPD.pdf" target="_blank">📎 Lihat File</a></p>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggle(this)">
+        <div class="card-title">📝 Instrumen Penilaian</div>
+        <div class="content">
+          <p><strong>Isi:</strong> Tes formatif dan sumatif</p>
+          <p><a href="file/instrumen.pdf" target="_blank">📎 Lihat File</a></p>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggle(this)">
+        <div class="card-title">📖 Bahan Ajar</div>
+        <div class="content">
+          <p><strong>Bentuk:</strong> PDF + PowerPoint</p>
+          <p><a href="file/bahanajar.pdf" target="_blank">📎 Lihat File</a></p>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggle(this)">
+        <div class="card-title">💡 Media Pembelajaran</div>
+        <div class="content">
+          <p><strong>Bentuk:</strong> Web Interaktif (.html)</p>
+          <p><a href="file/mediapembelajaran.pdf" target="_blank">📎 Lihat File</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggle(clickedCard) {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (card !== clickedCard) {
+          card.classList.remove('active');
+        }
+      });
+      clickedCard.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
